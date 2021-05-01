@@ -43,11 +43,13 @@ class DragonAvatar extends Component {
           style={{ backgroundColor, ...sizing }}
         ></div>
         <img
+          alt="Dragon"
           src={pattern}
           className="dragon-avatar-image-pattern"
           style={{ ...sizing }}
         />
         <img
+          alt="Dragon"
           src={build}
           className="dragon-avatar-image"
           style={{ ...sizing }}

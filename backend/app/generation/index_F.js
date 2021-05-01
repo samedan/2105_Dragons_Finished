@@ -27,7 +27,7 @@ class Generation {
     if (Date.now() > this.expiration) {
       throw new Error(`This generation expired on ${this.expiration}`);
     }
-    if (this.accountIds.has(accountId)) {
+    if (this.accountIds.has(this.accountId)) {
       throw new Error("You already have a Dragon from this generation");
     }
     this.accountIds.add(accountId);

@@ -37,3 +37,10 @@ body {
 .span-input {
   display: block;
 }
+
+.error {
+  background-color: brown;
+  color: #ffffff;
+  padding: 2px;
+  margin: 2px;
+}

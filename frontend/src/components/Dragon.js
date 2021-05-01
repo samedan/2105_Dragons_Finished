@@ -3,8 +3,21 @@ import { connect } from "react-redux";
 import DragonAvatar from "./DragonAvatar";
 import { Button } from "react-bootstrap";
 import { fetchDragon } from "../actions/dragon";
+import fetchStates from "../reducers/fetchStates";
 
 class Dragon extends Component {
+  get DragonView() {
+    const { dragon } = this.props;
+    if (dragon.status === fetchStates.error) {
+      return (
+        <div>
+          <span class="error">ERROR</span>
+          <span>{dragon.message}</span>
+        </div>
+      );
+    }
+    return <DragonAvatar dragon={dragon} />;
+  }
   render() {
     return (
       <div>
@@ -15,7 +28,8 @@ class Dragon extends Component {
         >
           New Dragon
         </Button>
-        <DragonAvatar dragon={this.props.dragon} />
+        <br />
+        {this.DragonView}
       </div>
     );
   }

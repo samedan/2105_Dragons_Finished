@@ -14,7 +14,7 @@ router.get("/new", (req, res, next) => {
   authenticatedAccount({ sessionString: req.cookies.sessionString })
     .then(({ account }) => {
       accountId = account.id;
-      dragon = req.app.locals.engine.generation.newDragon();
+      dragon = req.app.locals.engine.generation.newDragon({ accountId });
 
       return DragonTable.storeDragon(dragon);
     })

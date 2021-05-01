@@ -4,5 +4,7 @@
 /frontend/.cache
 /frontend/dist
 /backend/secrets
+/node_modules
+node_modules
 .cache
 dist
